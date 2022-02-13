@@ -1,0 +1,22 @@
+image: registry.gitlab.com/kitsudaiki/kitsunemimi-ci-docker-images/normal-tests:1.1.0
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - echo Working on branch $CI_COMMIT_REF_NAME
+    - pwd
+    - apt-get update
+    - apt-get install -y libssl-dev   uuid-dev libcrypto++-dev 
+    - ./build.sh test
+    - mkdir upload
+    - cp -r ../result/* upload/
+  artifacts:
+    paths:
+      - upload
+    expire_in: 1 week
+  tags:
+    - docker
+
