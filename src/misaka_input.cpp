@@ -27,25 +27,27 @@
 
 #include <libKitsunemimiHanamiEndpoints/endpoint.h>
 
+using Kitsunemimi::Sakura::SakuraLangInterface;
+
 namespace Misaka
 {
 
 /**
- * @brief HanamiMessaging::initMisakaBlossoms
- * @return
+ * @brief init misaka-specific blossoms
+ *
+ * @return true, if successful, else false
  */
 bool
 initMisakaBlossoms()
 {
     // init predefined blossoms
-    Kitsunemimi::Sakura::SakuraLangInterface* interface =
-            Kitsunemimi::Sakura::SakuraLangInterface::getInstance();
+    SakuraLangInterface* interface = SakuraLangInterface::getInstance();
     Kitsunemimi::Hanami::Endpoint* endpoints = Kitsunemimi::Hanami::Endpoint::getInstance();
     const std::string group = "-";
-
     if(interface->addBlossom(group, "get_api_documentation", new GenerateApiDocu()) == false) {
         return false;
     }
+
     // add new endpoints
     if(endpoints->addEndpoint("v1/documentation/api",
                               Kitsunemimi::Hanami::GET_TYPE,
