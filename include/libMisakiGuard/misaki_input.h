@@ -1,5 +1,5 @@
 /**
- * @file        misaka_input.h
+ * @file        misaki_input.h
  *
  * @author      Tobias Anker <tobias.anker@kitsunemimi.moe>
  *
@@ -20,18 +20,18 @@
  *      limitations under the License.
  */
 
-#ifndef KITSUNEMIMI_HANAMI_MISAKA_INPUT_H
-#define KITSUNEMIMI_HANAMI_MISAKA_INPUT_H
+#ifndef KITSUNEMIMI_HANAMI_MISAKI_INPUT_H
+#define KITSUNEMIMI_HANAMI_MISAKI_INPUT_H
 
 #include <string>
 
 #include <libKitsunemimiCommon/logger.h>
 
-namespace Misaka
+namespace Misaki
 {
 
-bool initMisakaBlossoms();
+bool initMisakiBlossoms();
 
 }
 
-#endif // KITSUNEMIMI_HANAMI_MISAKA_INPUT_H
+#endif // KITSUNEMIMI_HANAMI_MISAKI_INPUT_H

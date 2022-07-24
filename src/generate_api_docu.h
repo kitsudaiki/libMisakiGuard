@@ -20,12 +20,12 @@
  *      limitations under the License.
  */
 
-#ifndef KITSUNEMIMI_HANAMI_MISAKA_GENERATEAPIDOCU_H
-#define KITSUNEMIMI_HANAMI_MISAKA_GENERATEAPIDOCU_H
+#ifndef KITSUNEMIMI_HANAMI_MISAKI_GENERATEAPIDOCU_H
+#define KITSUNEMIMI_HANAMI_MISAKI_GENERATEAPIDOCU_H
 
 #include <libKitsunemimiSakuraLang/blossom.h>
 
-namespace Misaka
+namespace Misaki
 {
 
 class GenerateApiDocu
@@ -41,6 +41,6 @@ protected:
                  Kitsunemimi::ErrorContainer &error);
 };
 
-}  // namespace Misaka
+}  // namespace Misaki
 
-#endif // KITSUNEMIMI_HANAMI_MISAKA_GENERATEAPIDOCU_H
+#endif // KITSUNEMIMI_HANAMI_MISAKI_GENERATEAPIDOCU_H

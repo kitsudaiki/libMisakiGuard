@@ -111,9 +111,9 @@ echo "##########################################################################
 #-----------------------------------------------------------------------------------------------------------------
 
 if [ $1 = "test" ]; then
-    build_kitsune_lib_repo "libMisakaGuard" 1 "run_tests"
+    build_kitsune_lib_repo "libMisakiGuard" 1 "run_tests"
 else
-    build_kitsune_lib_repo "libMisakaGuard" 1
+    build_kitsune_lib_repo "libMisakiGuard" 1
 fi
 
 #-----------------------------------------------------------------------------------------------------------------

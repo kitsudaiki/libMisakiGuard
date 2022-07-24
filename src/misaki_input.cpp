@@ -1,5 +1,5 @@
 /**
- * @file        misaka_input.cpp
+ * @file        misaki_input.cpp
  *
  * @author      Tobias Anker <tobias.anker@kitsunemimi.moe>
  *
@@ -20,7 +20,7 @@
  *      limitations under the License.
  */
 
-#include <libMisakaGuard/misaka_input.h>
+#include <libMisakiGuard/misaki_input.h>
 #include <generate_api_docu.h>
 
 #include <libKitsunemimiSakuraLang/sakura_lang_interface.h>
@@ -29,16 +29,16 @@
 
 using Kitsunemimi::Sakura::SakuraLangInterface;
 
-namespace Misaka
+namespace Misaki
 {
 
 /**
- * @brief init misaka-specific blossoms
+ * @brief init misaki-specific blossoms
  *
  * @return true, if successful, else false
  */
 bool
-initMisakaBlossoms()
+initMisakiBlossoms()
 {
     // init predefined blossoms
     SakuraLangInterface* interface = SakuraLangInterface::getInstance();

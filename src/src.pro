@@ -1,6 +1,6 @@
 QT -= qt core gui
 
-TARGET = MisakaGuard
+TARGET = MisakiGuard
 CONFIG += c++17
 TEMPLATE = lib
 VERSION = 0.1.0
@@ -76,9 +76,9 @@ INCLUDEPATH += $$PWD \
                $$PWD/../include
 
 HEADERS += \
-    ../include/libMisakaGuard/misaka_input.h \
+    ../include/libMisakiGuard/misaki_input.h \
     generate_api_docu.h
 
 SOURCES += \
     generate_api_docu.cpp \
-    misaka_input.cpp
+    misaki_input.cpp

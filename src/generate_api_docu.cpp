@@ -31,7 +31,7 @@
 
 using namespace Kitsunemimi;
 
-namespace Misaka
+namespace Misaki
 {
 
 GenerateApiDocu::GenerateApiDocu()
@@ -309,4 +309,4 @@ GenerateApiDocu::runTask(Sakura::BlossomLeaf &blossomLeaf,
     return true;
 }
 
-}  // namespace Misaka
+}  // namespace Misaki
