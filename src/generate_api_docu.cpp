@@ -26,7 +26,7 @@
 #include <libKitsunemimiHanamiCommon/component_support.h>
 #include <libKitsunemimiHanamiEndpoints/endpoint.h>
 
-#include <libKitsunemimiCommon/common_methods/string_methods.h>
+#include <libKitsunemimiCommon/methods/string_methods.h>
 #include <libKitsunemimiCrypto/common.h>
 
 using namespace Kitsunemimi;
