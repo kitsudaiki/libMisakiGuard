@@ -56,10 +56,12 @@ GenerateApiDocu::GenerateApiDocu()
  *
  * @param docu reference to the complete document
  * @param defMap map with all field to ducument
+ * @param isRequest true to say that the actual field is a request-field
  */
 void
 addFieldDocu(std::string &docu,
-             const std::map<std::string, Sakura::FieldDef>* defMap)
+             const std::map<std::string, Sakura::FieldDef>* defMap,
+             const bool isRequest)
 {
     std::map<std::string, Sakura::FieldDef>::const_iterator it;
     for(it = defMap->begin();
@@ -102,53 +104,56 @@ addFieldDocu(std::string &docu,
             docu.append("        ``String``\n");
         }
 
-        // required
-        docu.append("    **Required:**\n");
-        if(isRequired) {
-            docu.append("        ``True``\n");
-        } else {
-            docu.append("        ``False``\n");
-        }
-
-        // default
-        if(defaultVal != nullptr
-                && isRequired == false)
+        if(isRequest)
         {
-            docu.append("    **Default:**\n");
-            docu.append("        ``" + defaultVal->toString() + "``\n");
-        }
-
-        // match
-        if(matchVal != nullptr)
-        {
-            docu.append("    **Does have the value:**\n");
-            docu.append("        ``" + matchVal->toString() + "``\n");
-        }
-
-        // match
-        if(regexVal != "")
-        {
-            docu.append("    **Must match the regex:**\n");
-            docu.append("        ``" + regexVal + "``\n");
-        }
-
-        // border
-        if(lowerBorder != 0
-                || upperBorder != 0)
-        {
-            if(fieldType == Sakura::SAKURA_INT_TYPE)
-            {
-                docu.append("    **Lower border of value:**\n");
-                docu.append("        ``" + std::to_string(lowerBorder) + "``\n");
-                docu.append("    **Upper border of value:**\n");
-                docu.append("        ``" + std::to_string(upperBorder) + "``\n");
+            // required
+            docu.append("    **Required:**\n");
+            if(isRequired) {
+                docu.append("        ``True``\n");
+            } else {
+                docu.append("        ``False``\n");
             }
-            if(fieldType == Sakura::SAKURA_STRING_TYPE)
+
+            // default
+            if(defaultVal != nullptr
+                    && isRequired == false)
             {
-                docu.append("    **Minimum string-length:**\n");
-                docu.append("        ``" + std::to_string(lowerBorder) + "``\n");
-                docu.append("    **Maximum string-length:**\n");
-                docu.append("        ``" + std::to_string(upperBorder) + "``\n");
+                docu.append("    **Default:**\n");
+                docu.append("        ``" + defaultVal->toString() + "``\n");
+            }
+
+            // match
+            if(matchVal != nullptr)
+            {
+                docu.append("    **Does have the value:**\n");
+                docu.append("        ``" + matchVal->toString() + "``\n");
+            }
+
+            // match
+            if(regexVal != "")
+            {
+                docu.append("    **Must match the regex:**\n");
+                docu.append("        ``" + regexVal + "``\n");
+            }
+
+            // border
+            if(lowerBorder != 0
+                    || upperBorder != 0)
+            {
+                if(fieldType == Sakura::SAKURA_INT_TYPE)
+                {
+                    docu.append("    **Lower border of value:**\n");
+                    docu.append("        ``" + std::to_string(lowerBorder) + "``\n");
+                    docu.append("    **Upper border of value:**\n");
+                    docu.append("        ``" + std::to_string(upperBorder) + "``\n");
+                }
+                if(fieldType == Sakura::SAKURA_STRING_TYPE)
+                {
+                    docu.append("    **Minimum string-length:**\n");
+                    docu.append("        ``" + std::to_string(lowerBorder) + "``\n");
+                    docu.append("    **Maximum string-length:**\n");
+                    docu.append("        ``" + std::to_string(upperBorder) + "``\n");
+                }
             }
         }
     }
@@ -182,13 +187,13 @@ createBlossomDocu(std::string &docu,
     docu.append("\n");
     docu.append("Request-Parameter\n");
     docu.append("~~~~~~~~~~~~~~~~~\n");
-    addFieldDocu(docu, blossom->getInputValidationMap());
+    addFieldDocu(docu, blossom->getInputValidationMap(), true);
 
     // add output-fields
     docu.append("\n");
     docu.append("Response-Parameter\n");
     docu.append("~~~~~~~~~~~~~~~~~~\n");
-    addFieldDocu(docu, blossom->getOutputValidationMap());
+    addFieldDocu(docu, blossom->getOutputValidationMap(), false);
 }
 
 /**
@@ -219,13 +224,13 @@ createTreeDocu(std::string &docu,
     docu.append("\n");
     docu.append("Request-Parameter\n");
     docu.append("~~~~~~~~~~~~~~~~~\n");
-    addFieldDocu(docu, &validationMap);
+    addFieldDocu(docu, &validationMap, true);
 
     // add output-fields
     docu.append("\n");
     docu.append("Response-Parameter\n");
     docu.append("~~~~~~~~~~~~~~~~~~\n");
-    addFieldDocu(docu, &validationMap);
+    addFieldDocu(docu, &validationMap, false);
 }
 
 /**
