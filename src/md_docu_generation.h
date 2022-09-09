@@ -1,5 +1,5 @@
 /**
- * @file        rst_docu_generation.h
+ * @file        md_docu_generation.h
  *
  * @author      Tobias Anker <tobias.anker@kitsunemimi.moe>
  *
@@ -20,12 +20,12 @@
  *      limitations under the License.
  */
 
-#ifndef RST_DOCU_GENERATION_H
-#define RST_DOCU_GENERATION_H
+#ifndef MD_DOCU_GENERATION_H
+#define MD_DOCU_GENERATION_H
 
 #include <string>
 
-void createRstDocumentation(std::string &docu,
-                            const std::string &localComponent);
+void createMdDocumentation(std::string &docu,
+                           const std::string &localComponent);
 
-#endif // RST_DOCU_GENERATION_H
+#endif // MD_DOCU_GENERATION_H

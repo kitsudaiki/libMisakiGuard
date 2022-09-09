@@ -23,6 +23,7 @@
 #include "generate_api_docu.h"
 
 #include <rst_docu_generation.h>
+#include <md_docu_generation.h>
 
 #include <libKitsunemimiHanamiCommon/component_support.h>
 #include <libKitsunemimiCrypto/common.h>
@@ -78,6 +79,10 @@ GenerateApiDocu::runTask(Sakura::BlossomLeaf &blossomLeaf,
             || type == "pdf")
     {
         createRstDocumentation(documentsion, localComponent);
+    }
+    else if(type == "md")
+    {
+        createMdDocumentation(documentsion, localComponent);
     }
 
     std::string base64Docu;
