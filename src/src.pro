@@ -77,8 +77,11 @@ INCLUDEPATH += $$PWD \
 
 HEADERS += \
     ../include/libMisakiGuard/misaki_input.h \
-    generate_api_docu.h
+    generate_api_docu.h \
+    rst_docu_generation.h
 
 SOURCES += \
     generate_api_docu.cpp \
     misaki_input.cpp
+
+DISTFILES +=
