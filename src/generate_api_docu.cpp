@@ -65,13 +65,13 @@ GenerateApiDocu::GenerateApiDocu()
  * @brief runTask
  */
 bool
-GenerateApiDocu::runTask(Sakura::BlossomLeaf &blossomLeaf,
+GenerateApiDocu::runTask(Sakura::BlossomIO &blossomIO,
                          const DataMap &,
                          Sakura::BlossomStatus &,
                          ErrorContainer &)
 {
     const std::string localComponent = SupportedComponents::getInstance()->localComponent;
-    const std::string type = blossomLeaf.input.get("type").getString();
+    const std::string type = blossomIO.input.get("type").getString();
 
     std::string documentsion = "";
 
@@ -88,7 +88,7 @@ GenerateApiDocu::runTask(Sakura::BlossomLeaf &blossomLeaf,
     std::string base64Docu;
     Crypto::encodeBase64(base64Docu, documentsion.c_str(), documentsion.size());
 
-    blossomLeaf.output.insert("documentation", base64Docu);
+    blossomIO.output.insert("documentation", base64Docu);
 
     return true;
 }
