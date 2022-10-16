@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.0] - 2022-10-16
+
+### added
+- mardown-output for the REST-API-docu-gneration
+
+### Changed
+- renamings
+
+
 ## [0.1.0] - 2022-02-13
 
 ### Added

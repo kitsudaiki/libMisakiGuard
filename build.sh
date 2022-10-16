@@ -50,30 +50,29 @@ function get_required_kitsune_lib_repo () {
 }
 
 #-----------------------------------------------------------------------------------------------------------------
-
 echo ""
 echo "###########################################################################################################"
 echo ""
-get_required_kitsune_lib_repo "libKitsunemimiCommon" "v0.27.0" 8
-get_required_kitsune_lib_repo "libKitsunemimiJson" "develop" 1
-get_required_kitsune_lib_repo "libKitsunemimiJinja2" "develop" 1
-get_required_kitsune_lib_repo "libKitsunemimiIni" "develop" 1
-get_required_kitsune_lib_repo "libKitsunemimiNetwork" "v0.8.2" 8
-get_required_kitsune_lib_repo "libKitsunemimiArgs" "develop" 8
-get_required_kitsune_lib_repo "libKitsunemimiConfig" "develop" 8
-get_required_kitsune_lib_repo "libKitsunemimiCrypto" "develop" 8
-get_required_kitsune_lib_repo "libKitsunemimiJwt" "develop" 8
+get_required_kitsune_lib_repo "libKitsunemimiCommon" "v0.27.1" 8
+get_required_kitsune_lib_repo "libKitsunemimiJson" "v0.12.0" 1
+get_required_kitsune_lib_repo "libKitsunemimiJinja2" "v0.10.0" 1
+get_required_kitsune_lib_repo "libKitsunemimiIni" "v0.6.0" 1
+get_required_kitsune_lib_repo "libKitsunemimiNetwork" "v0.9.0" 8
+get_required_kitsune_lib_repo "libKitsunemimiArgs" "v0.5.0" 8
+get_required_kitsune_lib_repo "libKitsunemimiConfig" "v0.5.0" 8
+get_required_kitsune_lib_repo "libKitsunemimiCrypto" "v0.3.0" 8
+get_required_kitsune_lib_repo "libKitsunemimiJwt" "v0.5.1" 8
 echo ""
 echo "###########################################################################################################"
 echo ""
-get_required_kitsune_lib_repo "libKitsunemimiSakuraNetwork" "develop" 8
-get_required_kitsune_lib_repo "libKitsunemimiSakuraLang" "develop" 1
+get_required_kitsune_lib_repo "libKitsunemimiSakuraNetwork" "v0.9.0" 8
+get_required_kitsune_lib_repo "libKitsunemimiSakuraLang" "v0.13.0" 1
 echo ""
 echo "###########################################################################################################"
 echo ""
-get_required_kitsune_lib_repo "libKitsunemimiHanamiCommon" "develop" 8
-get_required_kitsune_lib_repo "libKitsunemimiHanamiEndpoints" "develop" 1
-get_required_kitsune_lib_repo "libKitsunemimiHanamiNetwork" "develop" 8
+get_required_kitsune_lib_repo "libKitsunemimiHanamiCommon" "v0.3.0" 8
+get_required_kitsune_lib_repo "libKitsunemimiHanamiEndpoints" "v0.2.0" 1
+get_required_kitsune_lib_repo "libKitsunemimiHanamiNetwork" "v0.5.0" 8
 echo ""
 echo "###########################################################################################################"
 
