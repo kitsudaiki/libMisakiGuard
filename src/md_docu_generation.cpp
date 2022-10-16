@@ -170,12 +170,12 @@ createBlossomDocu_md(std::string &docu,
 
     // add input-fields
     docu.append("\n");
-    docu.append("##### Request-Parameter\n");
+    docu.append("**Request-Parameter**\n\n");
     addFieldDocu_md(docu, blossom->getInputValidationMap(), true);
 
     // add output-fields
     docu.append("\n");
-    docu.append("##### Response-Parameter\n");
+    docu.append("**Response-Parameter**\n\n");
     addFieldDocu_md(docu, blossom->getOutputValidationMap(), false);
 }
 
@@ -205,12 +205,12 @@ createTreeDocu_md(std::string &docu,
 
     // add input-fields
     docu.append("\n");
-    docu.append("##### Request-Parameter\n");
+    docu.append("**Request-Parameter**\n\n");
     addFieldDocu_md(docu, &validationMap, true);
 
     // add output-fields
     docu.append("\n");
-    docu.append("##### Response-Parameter\n");
+    docu.append("**Response-Parameter**\n\n");
     addFieldDocu_md(docu, &validationMap, false);
 }
 
@@ -235,6 +235,7 @@ generateEndpointDocu_md(std::string &docu)
         const std::string endpoint = it->first;
 
         // add endpoint
+        docu.append("\n");
         docu.append("### ");
         docu.append(endpoint);
         docu.append("\n");
