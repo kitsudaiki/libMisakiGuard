@@ -26,8 +26,3 @@ jobs:
           cp -r ../result/* /build_result/
       - name: "Check target-directory"
         run: ls -l /build_result
-      - name: Create artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: result
-          path: /build_result
