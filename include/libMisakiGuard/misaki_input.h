@@ -32,6 +32,10 @@ namespace Misaki
 
 bool initMisakiBlossoms();
 
+bool getInternalToken(std::string &token,
+                      const std::string &componentName,
+                      Kitsunemimi::ErrorContainer &error);
+
 }
 
 #endif // KITSUNEMIMI_HANAMI_MISAKI_INPUT_H
