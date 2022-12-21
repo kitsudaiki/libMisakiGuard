@@ -23,13 +23,9 @@
 #include <libMisakiGuard/misaki_input.h>
 #include <generate_api_docu.h>
 
-#include <libKitsunemimiSakuraLang/sakura_lang_interface.h>
-
-#include <libKitsunemimiHanamiEndpoints/endpoint.h>
 #include <libKitsunemimiHanamiNetwork/hanami_messaging_client.h>
 #include <libKitsunemimiHanamiNetwork/hanami_messaging.h>
 
-using Kitsunemimi::Sakura::SakuraLangInterface;
 using Kitsunemimi::Hanami::HanamiMessagingClient;
 using Kitsunemimi::Hanami::HanamiMessaging;
 
@@ -45,15 +41,14 @@ bool
 initMisakiBlossoms()
 {
     // init predefined blossoms
-    SakuraLangInterface* interface = SakuraLangInterface::getInstance();
-    Kitsunemimi::Hanami::Endpoint* endpoints = Kitsunemimi::Hanami::Endpoint::getInstance();
+    HanamiMessaging* interface = HanamiMessaging::getInstance();
     const std::string group = "-";
     if(interface->addBlossom(group, "get_api_documentation", new GenerateApiDocu()) == false) {
         return false;
     }
 
     // add new endpoints
-    if(endpoints->addEndpoint("v1/documentation/api",
+    if(interface->addEndpoint("v1/documentation/api",
                               Kitsunemimi::Hanami::GET_TYPE,
                               Kitsunemimi::Hanami::BLOSSOM_TYPE,
                               group,
