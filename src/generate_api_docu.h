@@ -23,21 +23,21 @@
 #ifndef KITSUNEMIMI_HANAMI_MISAKI_GENERATEAPIDOCU_H
 #define KITSUNEMIMI_HANAMI_MISAKI_GENERATEAPIDOCU_H
 
-#include <libKitsunemimiSakuraLang/blossom.h>
+#include <libKitsunemimiHanamiNetwork/blossom.h>
 
 namespace Misaki
 {
 
 class GenerateApiDocu
-        : public Kitsunemimi::Sakura::Blossom
+        : public Kitsunemimi::Hanami::Blossom
 {
 public:
     GenerateApiDocu();
 
 protected:
-    bool runTask(Kitsunemimi::Sakura::BlossomIO &blossomIO,
+    bool runTask(Kitsunemimi::Hanami::BlossomIO &blossomIO,
                  const Kitsunemimi::DataMap &context,
-                 Kitsunemimi::Sakura::BlossomStatus &status,
+                 Kitsunemimi::Hanami::BlossomStatus &status,
                  Kitsunemimi::ErrorContainer &error);
 };
 

@@ -35,7 +35,7 @@ namespace Misaki
 {
 
 GenerateApiDocu::GenerateApiDocu()
-    : Sakura::Blossom("Generate a user-specific documentation for the API "
+    : Hanami::Blossom("Generate a user-specific documentation for the API "
                                    "of the current component.")
 {
     //----------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ GenerateApiDocu::GenerateApiDocu()
     //----------------------------------------------------------------------------------------------
 
     registerInputField("type",
-                       Sakura::SAKURA_STRING_TYPE,
+                       Hanami::SAKURA_STRING_TYPE,
                        false,
                        "Output-type of the document (pdf, rst, md).");
     assert(addFieldDefault("type", new Kitsunemimi::DataValue("pdf")));
@@ -53,7 +53,7 @@ GenerateApiDocu::GenerateApiDocu()
     //----------------------------------------------------------------------------------------------
 
     registerOutputField("documentation",
-                        Sakura::SAKURA_STRING_TYPE,
+                        Hanami::SAKURA_STRING_TYPE,
                         "API-documentation as base64 converted string.");
 
     //----------------------------------------------------------------------------------------------
@@ -65,9 +65,9 @@ GenerateApiDocu::GenerateApiDocu()
  * @brief runTask
  */
 bool
-GenerateApiDocu::runTask(Sakura::BlossomIO &blossomIO,
+GenerateApiDocu::runTask(Hanami::BlossomIO &blossomIO,
                          const DataMap &,
-                         Sakura::BlossomStatus &,
+                         Hanami::BlossomStatus &,
                          ErrorContainer &)
 {
     const std::string localComponent = SupportedComponents::getInstance()->localComponent;
