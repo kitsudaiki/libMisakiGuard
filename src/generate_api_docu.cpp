@@ -86,7 +86,7 @@ GenerateApiDocu::runTask(Hanami::BlossomIO &blossomIO,
     }
 
     std::string base64Docu;
-    Crypto::encodeBase64(base64Docu, documentsion.c_str(), documentsion.size());
+    encodeBase64(base64Docu, documentsion.c_str(), documentsion.size());
 
     blossomIO.output.insert("documentation", base64Docu);
 
