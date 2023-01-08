@@ -23,6 +23,8 @@
 #include <libMisakiGuard/misaki_input.h>
 #include <generate_api_docu.h>
 
+#include <libKitsunemimiJson/json_item.h>
+
 #include <libKitsunemimiHanamiNetwork/hanami_messaging_client.h>
 #include <libKitsunemimiHanamiNetwork/hanami_messaging.h>
 
@@ -101,7 +103,7 @@ getInternalToken(std::string &token,
     }
 
     // parse response
-    Kitsunemimi::Json::JsonItem jsonItem;
+    Kitsunemimi::JsonItem jsonItem;
     if(jsonItem.parse(response.responseContent, error) == false)
     {
         error.addMeesage("Failed to parse internal jwt-token from response of misaki");
